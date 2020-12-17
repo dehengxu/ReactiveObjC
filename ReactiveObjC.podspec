@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ReactiveObjC"
-  s.version      = "3.1.0"
+  s.version      = "3.2.0"
   s.summary      = "The 2.x ReactiveCocoa Objective-C API: Streams of values over time"
 
   s.description  = <<-DESC.strip_heredoc
@@ -37,6 +37,10 @@ Pod::Spec.new do |s|
                             "**/RACEmpty*.h"
 
   s.ios.exclude_files     = "ReactiveObjC/**/*{AppKit,NSControl,NSText,NSTable}*"
+  s.subspec 'no-UI' do|sub|
+    sub.source_files = "ReactiveObjC/**/*.{h,m,d}*", "ReactiveObjC/extobjc/*.{h,m}"
+    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable}*"
+  end
 
   s.osx.exclude_files     = "ReactiveObjC/**/*{UIActionSheet,UIAlertView,UIBarButtonItem,"\
                             "UIButton,UICollectionReusableView,UIControl,UIDatePicker,"\
