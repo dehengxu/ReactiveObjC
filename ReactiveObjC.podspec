@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   s.ios.exclude_files     = "ReactiveObjC/**/*{AppKit,NSControl,NSText,NSTable}*"
   s.subspec 'no-UI' do|sub|
     sub.source_files = "ReactiveObjC/**/*.{h,m,d}*", "ReactiveObjC/extobjc/*.{h,m}"
-    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable}*"
+    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile}*"
   end
 
   s.osx.exclude_files     = "ReactiveObjC/**/*{UIActionSheet,UIAlertView,UIBarButtonItem,"\
