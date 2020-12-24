@@ -16,15 +16,19 @@ FOUNDATION_EXPORT const unsigned char ReactiveObjCVersionString[];
 
 #import <ReactiveObjC/RACEXTKeyPathCoding.h>
 #import <ReactiveObjC/RACEXTScope.h>
+
+#if __has_include(<ReactiveObjC/NSData+RACSupport.h>)
 #import <ReactiveObjC/NSArray+RACSequenceAdditions.h>
 #import <ReactiveObjC/NSData+RACSupport.h>
 #import <ReactiveObjC/NSDictionary+RACSequenceAdditions.h>
 #import <ReactiveObjC/NSEnumerator+RACSequenceAdditions.h>
+#endif
 
 #if __has_include(<ReactiveObjC/NSFileHandle+RACSupport.h>)
 #import <ReactiveObjC/NSFileHandle+RACSupport.h>
 #endif
 
+#if __has_include(<ReactiveObjC/NSNotificationCenter+RACSupport.h>)
 #import <ReactiveObjC/NSNotificationCenter+RACSupport.h>
 #import <ReactiveObjC/NSObject+RACDeallocating.h>
 #import <ReactiveObjC/NSObject+RACLifting.h>
@@ -36,6 +40,8 @@ FOUNDATION_EXPORT const unsigned char ReactiveObjCVersionString[];
 #import <ReactiveObjC/NSString+RACSupport.h>
 #import <ReactiveObjC/NSIndexSet+RACSequenceAdditions.h>
 #import <ReactiveObjC/NSUserDefaults+RACSupport.h>
+#endif
+
 #import <ReactiveObjC/RACBehaviorSubject.h>
 #import <ReactiveObjC/RACChannel.h>
 #import <ReactiveObjC/RACCommand.h>
@@ -82,7 +88,10 @@ FOUNDATION_EXPORT const unsigned char ReactiveObjCVersionString[];
 #endif
 
 	#if TARGET_OS_IOS
+#if __has_include(<ReactiveObjC/NSURLConnection+RACSupport.h>)
 		#import <ReactiveObjC/NSURLConnection+RACSupport.h>
+#endif
+
 #if __has_include(<ReactiveObjC/UIStepper+RACSignalSupport.h>)
 		#import <ReactiveObjC/UIStepper+RACSignalSupport.h>
 		#import <ReactiveObjC/UIDatePicker+RACSignalSupport.h>
