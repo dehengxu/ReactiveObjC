@@ -60,7 +60,11 @@ FOUNDATION_EXPORT const unsigned char ReactiveObjCVersionString[];
 #import <ReactiveObjC/RACDisposable.h>
 #import <ReactiveObjC/RACEvent.h>
 #import <ReactiveObjC/RACGroupedSignal.h>
+
+#if __has_include(<ReactiveObjC/RACKVOChannel.h>)
 #import <ReactiveObjC/RACKVOChannel.h>
+#endif
+
 #import <ReactiveObjC/RACMulticastConnection.h>
 #import <ReactiveObjC/RACQueueScheduler.h>
 #import <ReactiveObjC/RACQueueScheduler+Subclass.h>

@@ -37,10 +37,43 @@ Pod::Spec.new do |s|
                             "**/RACEmpty*.h"
 
   s.ios.exclude_files     = "ReactiveObjC/**/*{AppKit,NSControl,NSText,NSTable}*"
-  s.subspec 'no-UI' do|sub|
-    sub.source_files = "ReactiveObjC/**/ReactiveObjC*.{h,m,d}*", "ReactiveObjC/**/RAC*.{h,m,d}*", "ReactiveObjC/extobjc/*.{h,m}" , "ReactiveObjC/**/{NSObject,NSString,NSInvocation,NSArray}*.{h,m,d}*"
-    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSDictionary,NSEnumerator}*"
+
+  s.subspec 'ios-base' do|sub|
+    sub.source_files = "ReactiveObjC/**/ReactiveObjC*.{h,m,d}*", "ReactiveObjC/**/RAC*.{h,m,d}*", "ReactiveObjC/extobjc/*.{h,m}", "ReactiveObjC/**/{NSObject+RACDescription}*.{h,m,d}*"
+    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSDictionary,NSEnumerator,NSInvocation,*KVO}*"
   end
+
+  s.subspec 'ios-kvo' do|sub|
+    sub.source_files = "ReactiveObjC/**/ReactiveObjC*.{h,m,d}*", "ReactiveObjC/**/RAC*.{h,m,d}*", "ReactiveObjC/extobjc/*.{h,m}", "ReactiveObjC/**/{NSObject+*KVO*}*.{h,m,d}*"
+    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSDictionary,NSEnumerator,NSInvocation,NSObject}*"
+    sub.dependency 'ReactiveObjC/ios-base'
+  end
+
+  s.subspec 'ios-array' do|sub|
+    sub.source_files = "ReactiveObjC/**/{NSArray}*.{h,m,d}*"
+    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSDictionary,NSEnumerator,NSObject,*KVO}*"
+    sub.dependency 'ReactiveObjC/ios-base'
+  end
+
+  s.subspec 'ios-string' do|sub|
+    sub.source_files = "ReactiveObjC/**/{NSString}*.{h,m,d}*"
+    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSDictionary,MSArray,NSEnumerator,*KVO}*"
+    sub.dependency 'ReactiveObjC/ios-base'
+  end
+
+
+  s.subspec 'ios-collection' do|sub|
+    sub.source_files = "ReactiveObjC/**/{NSDictionary,NSEnumerator}*.{h,m,d}*"
+    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSObject,*KVO}*"
+    sub.dependency 'ReactiveObjC/ios-base'
+  end
+
+  s.subspec 'ios-ui' do|sub|
+    sub.source_files = "ReactiveObjC/**/{UI}*.{h,m,d}*"
+    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSDictionary,NSEnumerator,*KVO}*"
+    sub.dependency 'ReactiveObjC/ios-base'
+  end
+
 
   s.osx.exclude_files     = "ReactiveObjC/**/*{UIActionSheet,UIAlertView,UIBarButtonItem,"\
                             "UIButton,UICollectionReusableView,UIControl,UIDatePicker,"\
