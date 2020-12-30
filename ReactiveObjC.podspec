@@ -39,8 +39,8 @@ Pod::Spec.new do |s|
   s.ios.exclude_files     = "ReactiveObjC/**/*{AppKit,NSControl,NSText,NSTable}*"
 
   s.subspec 'ios-base' do|sub|
-    sub.source_files = "ReactiveObjC/**/ReactiveObjC*.{h,m,d}*", "ReactiveObjC/**/RAC*.{h,m,d}*", "ReactiveObjC/extobjc/*.{h,m}", "ReactiveObjC/**/{NSObject+RACDescription,NSObject+RACDeallocating}*.{h,m,d}*"
-    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSDictionary,NSEnumerator,NSInvocation,*KVO,NSArray+RACSequenceAdditions}*", "ReactiveObjC/**/{RACDelegateProxy,RACSelectorSignal,RACLifting,RACPropertySubscribing}.{h,m}"
+    sub.source_files = "ReactiveObjC/**/ReactiveObjC*.{h,m,d}*", "ReactiveObjC/**/RAC*.{h,m,d}*", "ReactiveObjC/extobjc/*.{h,m}", "ReactiveObjC/**/{NSObject+RACDescription,NSObject+RACDeallocating,NSArray+RACSequenceAdditions}*.{h,m,d}*"
+    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSDictionary,NSEnumerator,NSInvocation,*KVO}*", "ReactiveObjC/**/{RACDelegateProxy,RACSelectorSignal,RACLifting,RACPropertySubscribing}.{h,m}"
   end
 
   s.subspec 'ios-kvo' do|sub|
