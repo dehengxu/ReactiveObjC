@@ -49,12 +49,6 @@ Pod::Spec.new do |s|
     sub.dependency 'ReactiveObjC/ios-base'
   end
 
-  s.subspec 'ios-array' do|sub|
-    sub.source_files = "ReactiveObjC/**/{NSArray}*.{h,m,d}*"
-    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSDictionary,NSEnumerator,NSObject,*KVO}*"
-    sub.dependency 'ReactiveObjC/ios-base'
-  end
-
   s.subspec 'ios-string' do|sub|
     sub.source_files = "ReactiveObjC/**/{NSString}*.{h,m,d}*"
     sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSDictionary,MSArray,NSEnumerator,*KVO}*"
