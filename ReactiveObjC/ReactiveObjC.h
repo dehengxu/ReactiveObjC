@@ -34,8 +34,17 @@ FOUNDATION_EXPORT const unsigned char ReactiveObjCVersionString[];
 
 #if __has_include(<ReactiveObjC/NSObject+RACDeallocating.h>)
 #import <ReactiveObjC/NSObject+RACDeallocating.h>
+#endif
+
+#if __has_include(<ReactiveObjC/NSObject+RACLifting.h>)
 #import <ReactiveObjC/NSObject+RACLifting.h>
+#endif
+
+#if __has_include(<ReactiveObjC/NSObject+RACPropertySubscribing.h>)
 #import <ReactiveObjC/NSObject+RACPropertySubscribing.h>
+#endif
+
+#if __has_include(<ReactiveObjC/NSObject+RACSelectorSignal.h>)
 #import <ReactiveObjC/NSObject+RACSelectorSignal.h>
 #endif
 
@@ -54,7 +63,11 @@ FOUNDATION_EXPORT const unsigned char ReactiveObjCVersionString[];
 
 #import <ReactiveObjC/RACBehaviorSubject.h>
 #import <ReactiveObjC/RACChannel.h>
+
+#if __has_include(<ReactiveObjC/RACCommand.h>)
 #import <ReactiveObjC/RACCommand.h>
+#endif
+
 #import <ReactiveObjC/RACCompoundDisposable.h>
 #import <ReactiveObjC/RACDelegateProxy.h>
 #import <ReactiveObjC/RACDisposable.h>

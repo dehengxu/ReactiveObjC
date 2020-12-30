@@ -39,8 +39,8 @@ Pod::Spec.new do |s|
   s.ios.exclude_files     = "ReactiveObjC/**/*{AppKit,NSControl,NSText,NSTable}*"
 
   s.subspec 'ios-base' do|sub|
-    sub.source_files = "ReactiveObjC/**/ReactiveObjC*.{h,m,d}*", "ReactiveObjC/**/RAC*.{h,m,d}*", "ReactiveObjC/extobjc/*.{h,m}", "ReactiveObjC/**/{NSObject+RACDescription,NSObject+RACDeallocating,NSObject+RACSelectorSignal,NSArray+RACSequenceAdditions}*.{h,m,d}*"
-    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSDictionary,NSEnumerator,NSInvocation,*KVO,RACCommand}*"
+    sub.source_files = "ReactiveObjC/**/ReactiveObjC*.{h,m,d}*", "ReactiveObjC/**/RAC*.{h,m,d}*", "ReactiveObjC/extobjc/*.{h,m}", "ReactiveObjC/**/{NSObject+RACDescription}*.{h,m,d}*"
+    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSDictionary,NSEnumerator,NSInvocation,*KVO,RACCommand,RACLifting,RACPropertySubscribing,RACSelectorSignal,NSArray+RACSequenceAdditions}*"
   end
 
   s.subspec 'ios-kvo' do|sub|
