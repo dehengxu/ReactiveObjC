@@ -69,7 +69,11 @@ FOUNDATION_EXPORT const unsigned char ReactiveObjCVersionString[];
 #endif
 
 #import <ReactiveObjC/RACCompoundDisposable.h>
+
+#if __has_include(<ReactiveObjC/RACDelegateProxy.h>)
 #import <ReactiveObjC/RACDelegateProxy.h>
+#endif
+
 #import <ReactiveObjC/RACDisposable.h>
 #import <ReactiveObjC/RACEvent.h>
 #import <ReactiveObjC/RACGroupedSignal.h>
@@ -87,7 +91,11 @@ FOUNDATION_EXPORT const unsigned char ReactiveObjCVersionString[];
 #import <ReactiveObjC/RACScopedDisposable.h>
 #import <ReactiveObjC/RACSequence.h>
 #import <ReactiveObjC/RACSerialDisposable.h>
+
+#if __has_include(<ReactiveObjC/RACSignal+Operations.h>)
 #import <ReactiveObjC/RACSignal+Operations.h>
+#endif
+
 #import <ReactiveObjC/RACSignal.h>
 #import <ReactiveObjC/RACStream.h>
 #import <ReactiveObjC/RACSubject.h>
