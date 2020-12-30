@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'ios-base' do|sub|
     sub.source_files = "ReactiveObjC/**/ReactiveObjC*.{h,m,d}*", "ReactiveObjC/**/RAC*.{h,m,d}*", "ReactiveObjC/extobjc/*.{h,m}", "ReactiveObjC/**/{NSObject+RACDescription,NSObject+RACDeallocating,NSObject+RACPropertySubscribing,NSObject+RACKVOWrapper,NSArray+RACSequenceAdditions}*.{h,m,d}*"
-    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSDictionary,NSEnumerator,NSInvocation,*KVO}*", "ReactiveObjC/**/{RACDelegateProxy,RACSelectorSignal,RACLifting}.{h,m}"
+    sub.ios.exclude_files = "ReactiveObjC/**/*{MK,UI,AppKit,NSControl,NSText,NSTable,NSFile,NSData,NSDictionary,NSEnumerator,NSInvocation,RACKVO}*", "ReactiveObjC/**/{RACDelegateProxy,RACSelectorSignal,RACLifting}.{h,m}"
   end
 
   s.subspec 'ios-operators' do|sub|
